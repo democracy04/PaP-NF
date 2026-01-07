@@ -1,4 +1,4 @@
-# PaP-NF
+# PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows
 
 Official repository for the paper:
 
