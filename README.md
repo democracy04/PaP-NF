@@ -2,7 +2,7 @@
 
 Official repository for the paper:
 
-**PaP-NF: [Full Paper Title]**
+**PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows**
 
 ---
 
