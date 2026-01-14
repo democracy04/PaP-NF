@@ -1,5 +1,4 @@
-# PaP-NF: Probabilistic Long-Term Time Series Forecasting  
-### Prefix-as-Prompt Reprogramming + Normalizing Flows  
+# PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows
 [![Paper](https://img.shields.io/badge/Paper-PDF-blue)]() 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 [![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)]()
