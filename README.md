@@ -58,15 +58,8 @@ The model provides well-calibrated predictive distributions, achieving top-tier 
 </p>
 
 ---
-
-# Probabilistic forecasting with Llama-3.1 backbone
-python main.py \
-  --model PaP-NF \
-  --data ETTh1 \
-  --seq_len 96 \
-  --pred_len 720 \
-  --llm_model_path YOUR_LLAMA_PATH
-
+  
+# Citation
   @article{kim2026papnf,
   title={PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows},
   author={Kim, Minju and Hur, Youngbum},
@@ -74,10 +67,3 @@ python main.py \
   year={2026}
 }
 
-## 🚀 Getting Started
-
-### Installation
-```bash
-git clone [https://github.com/democracy04/PaP-NF.git](https://github.com/democracy04/PaP-NF.git)
-cd PaP-NF
-pip install -r requirements.txt
