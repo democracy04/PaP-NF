@@ -39,7 +39,7 @@ Our framework consists of a three-stage pipeline designed for robust long-term p
 The following benchmark datasets used in the paper can be obtained from the links below:
 
 * **ETT (Electricity Transformer Temperature)**: Available at [ETDataset GitHub](https://github.com/zhouhaoyi/ETDataset). Includes ETTh1, ETTh2, ETTm1, and ETTm2.
-* **Traffic**: Standard transportation dataset often hosted in [Autoformer](https://github.com/thuml/Autoformer) or [Time-Series-Library](https://github.com/thuml/Time-Series-Library).
+* **Traffic**: Standard transportation dataset often hosted in [Time-Series-Library](https://github.com/thuml/Time-Series-Library).
 
 Please place the downloaded `.csv` files under the `./data/` directory.
 
