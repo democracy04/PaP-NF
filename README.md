@@ -8,43 +8,43 @@
 
 ## 🌟 Overview
 
-**PaP-NF** is a novel probabilistic forecasting framework that aligns continuous time series with a frozen Large Language Model (LLM) using a **Prefix-as-Prompt (PaP)** mechanism. By utilizing the LLM as a global context encoder and integrating it with Normalizing Flows, the framework captures complex future uncertainties without the precision loss typically associated with numerical discretization.
+**PaP-NF** is a novel probabilistic forecasting framework that aligns continuous time series with a frozen Large Language Model (LLM) using a **Prefix-as-Prompt (PaP)** mechanism[cite: 7]. [cite_start]By utilizing the LLM as a global context encoder and integrating it with Normalizing Flows, the framework captures complex future uncertainties without the precision loss typically associated with numerical discretization[cite: 26, 27].
 
 <p align="center">
-  <img src="figure/overview__.png" width="850">
+  <img src="figure/overview__.png" width="80%">
 </p>
 
 ### Key Innovations
-* **Principled Hybrid Framework**: Maintains local numerical fidelity through linear embeddings while leveraging frozen LLMs for sophisticated global reasoning.
-* **Prefix-as-Prompt (PaP)**: Successfully aligns numerical features with pre-trained LLM embedding spaces without the need for expensive parameter fine-tuning.
-* **Uncertainty-Aware Forecasting**: Conditions conditional normalizing flows on joint numerical and semantic contexts for high-resolution density estimation.
-* **High Efficiency**: Achieves $O(1)$ sampling speed in a single forward pass, significantly outperforming the iterative latency found in diffusion-based models.
+* [cite_start]**Principled Hybrid Framework**: Preserves local numerical precision via linear embeddings while utilizing frozen LLMs for global semantic reasoning[cite: 31].
+* [cite_start]**Prefix-as-Prompt (PaP)**: Aligns numerical embeddings with pre-trained LLMs without modifying LLM parameters[cite: 33].
+* [cite_start]**Uncertainty-Aware Prediction**: Conditions normalizing flows on joint numerical and LLM contexts for precise density estimation[cite: 34].
+* [cite_start]**Efficient Sampling**: Achieves $O(1)$ efficiency in a single forward pass, bypassing the sampling latency of diffusion-based models[cite: 57, 257].
 
 ---
 
 ## 🏗️ Methodology
 
 Our framework consists of a three-stage pipeline designed for robust long-term prediction:
-1. **Local Encoding**: A linear encoder captures localized temporal dynamics.
-2. **Global Context**: Learnable prefixes align temporal features with a frozen Llama-3.1 backbone to extract semantic context.
-3. **Probabilistic Generation**: Conditional Normalizing Flows generate exact likelihood-based future distributions $p(Y|X)$.
+1. [cite_start]**Local Encoding**: A linear encoder captures localized temporal dynamics[cite: 93].
+2. [cite_start]**Global Context**: Learnable prefixes align temporal features with a frozen Llama-3.1 backbone to extract semantic context[cite: 94].
+3. [cite_start]**Probabilistic Generation**: Conditional Normalizing Flows generate exact likelihood-based future distributions $p(Y|X)$[cite: 95].
 
 ---
 
 ## 📊 Experimental Results
 
 ### 1. Competitive Point Forecasting
-PaP-NF maintains superior accuracy across long-term horizons, notably outperforming state-of-the-art deterministic models like TimesNet on high-volatility datasets.
+[cite_start]PaP-NF maintains superior accuracy across long-term horizons, notably outperforming state-of-the-art deterministic models like TimesNet on high-volatility datasets[cite: 199].
 
 <p align="center">
-  <img src="figure/table1.png" width="850">
+  <img src="figure/table1.png" width="75%">
 </p>
 
 ### 2. Robust Uncertainty Quantification
-The model provides well-calibrated predictive distributions, achieving top-tier performance in Continuous Ranked Probability Score (CRPS) benchmarks.
+[cite_start]The model provides well-calibrated predictive distributions, achieving top-tier performance in Continuous Ranked Probability Score (CRPS) benchmarks[cite: 215].
 
 <p align="center">
-  <img src="figure/table2.png" width="600">
+  <img src="figure/table2.png" width="55%">
 </p>
 
 ---
