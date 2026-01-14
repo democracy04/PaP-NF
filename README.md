@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/github/stars/democracy04/PaP-NF?style=social">
 </p>
 <p align="center">
-  <a href="./paper.pdf">📄 Paper</a> 
+  <a href="./paper.pdf"> [Paper]</a> 
 </p>
 
 ## 🌟 Overview
