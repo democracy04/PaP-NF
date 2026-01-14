@@ -1,47 +1,57 @@
 # PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows
 
-[![Paper](https://img.shields.io/badge/Paper-Submitted_to_ICPR_2026-orange)](#) 
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Paper-Submitted_to_ICPR_2026-orange">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg">
+  <img src="https://img.shields.io/github/stars/democracy04/PaP-NF?style=social">
+</p>
+
+<p align="center">
+  <a href="#overview">Overview</a> •
+  <a href="#methodology">Methodology</a> •
+  <a href="#experimental-results">Results</a> •
+  <a href="#getting-started">Getting Started</a>
+</p>
 
 ---
 
 ## 🌟 Overview
 
-**PaP-NF** is a novel probabilistic forecasting framework that aligns continuous time series with a frozen Large Language Model (LLM) using a **Prefix-as-Prompt (PaP)** mechanism[cite: 7]. [cite_start]By utilizing the LLM as a global context encoder and integrating it with Normalizing Flows, the framework captures complex future uncertainties without the precision loss typically associated with numerical discretization[cite: 26, 27].
+[cite_start]**PaP-NF** is a novel probabilistic forecasting framework that aligns continuous time series with a frozen Large Language Model (LLM) using a **Prefix-as-Prompt (PaP)** mechanism[cite: 1, 7]. [cite_start]By utilizing the LLM as a global context encoder and integrating it with Normalizing Flows, the framework captures complex future uncertainties without the precision loss typically associated with numerical discretization[cite: 7, 26, 27].
 
 <p align="center">
   <img src="figure/overview__.png" width="80%">
 </p>
 
 ### Key Innovations
-* [cite_start]**Principled Hybrid Framework**: Preserves local numerical precision via linear embeddings while utilizing frozen LLMs for global semantic reasoning[cite: 31].
-* [cite_start]**Prefix-as-Prompt (PaP)**: Aligns numerical embeddings with pre-trained LLMs without modifying LLM parameters[cite: 33].
-* [cite_start]**Uncertainty-Aware Prediction**: Conditions normalizing flows on joint numerical and LLM contexts for precise density estimation[cite: 34].
-* [cite_start]**Efficient Sampling**: Achieves $O(1)$ efficiency in a single forward pass, bypassing the sampling latency of diffusion-based models[cite: 57, 257].
+* [cite_start]**Principled Hybrid Framework**: Maintains local numerical fidelity through linear embeddings while leveraging frozen LLMs for sophisticated global reasoning[cite: 31].
+* [cite_start]**Prefix-as-Prompt (PaP)**: Aligns numerical embeddings with pre-trained LLMs without modifying backbone parameters[cite: 33].
+* [cite_start]**Uncertainty-Aware Forecasting**: Conditions normalizing flows on joint numerical and semantic contexts for precise density estimation[cite: 34].
+* [cite_start]**High Efficiency**: Achieves $O(1)$ sampling speed, bypassing the iterative latency of diffusion-based models[cite: 57, 257].
 
 ---
 
 ## 🏗️ Methodology
 
-Our framework consists of a three-stage pipeline designed for robust long-term prediction:
-1. [cite_start]**Local Encoding**: A linear encoder captures localized temporal dynamics[cite: 93].
-2. [cite_start]**Global Context**: Learnable prefixes align temporal features with a frozen Llama-3.1 backbone to extract semantic context[cite: 94].
-3. [cite_start]**Probabilistic Generation**: Conditional Normalizing Flows generate exact likelihood-based future distributions $p(Y|X)$[cite: 95].
+[cite_start]Our framework consists of a three-stage pipeline designed for robust long-term prediction[cite: 65, 108]:
+1. [cite_start]**Local Encoding**: A linear encoder captures localized temporal dynamics[cite: 71, 110].
+2. [cite_start]**Global Context**: Learnable prefixes align temporal features with a frozen Llama-3.1 backbone to extract semantic context[cite: 74, 131].
+3. [cite_start]**Probabilistic Generation**: Conditional Normalizing Flows generate exact likelihood-based future distributions $p(Y|X)$[cite: 88, 156].
 
 ---
 
 ## 📊 Experimental Results
 
 ### 1. Competitive Point Forecasting
-[cite_start]PaP-NF maintains superior accuracy across long-term horizons, notably outperforming state-of-the-art deterministic models like TimesNet on high-volatility datasets[cite: 199].
+[cite_start]PaP-NF maintains superior accuracy across long-term horizons, notably outperforming state-of-the-art deterministic models like TimesNet on high-volatility datasets[cite: 197, 199].
 
 <p align="center">
   <img src="figure/table1.png" width="75%">
 </p>
 
 ### 2. Robust Uncertainty Quantification
-[cite_start]The model provides well-calibrated predictive distributions, achieving top-tier performance in Continuous Ranked Probability Score (CRPS) benchmarks[cite: 215].
+[cite_start]The model provides well-calibrated predictive distributions, achieving top-tier performance in Continuous Ranked Probability Score (CRPS) benchmarks[cite: 203, 215].
 
 <p align="center">
   <img src="figure/table2.png" width="55%">
