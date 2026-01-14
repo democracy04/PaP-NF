@@ -8,10 +8,10 @@
 
 ## 🌟 Overview
 
-[cite_start]**PaP-NF** is a novel probabilistic forecasting framework that aligns continuous time series with a frozen Large Language Model (LLM) using a **Prefix-as-Prompt (PaP)** mechanism[cite: 7]. [cite_start]It addresses the fundamental challenge of numerical precision loss in LLM-based approaches by decoupling global semantic extraction from local probabilistic generation[cite: 26, 27].
+[cite_start]**PaP-NF** is a novel probabilistic forecasting framework that aligns continuous time series with a frozen Large Language Model (LLM) using a **Prefix-as-Prompt (PaP)** mechanism[cite: 1, 7]. [cite_start]It addresses the fundamental challenge of numerical precision loss in LLM-based approaches by decoupling global semantic extraction from local probabilistic generation[cite: 26, 27].
 
 <p align="center">
-  <img src="figures/overview__.png" width="850">
+  <img src="figure/overview__.png" width="850">
   <br>
   <em><b>Figure 1:</b> Overview of the PaP-NF framework. [cite_start]A linear encoder extracts local patterns, while the frozen LLM provides global semantic reasoning via prefix-based alignment[cite: 65, 93].</em>
 </p>
@@ -26,29 +26,29 @@
 
 ## 🏗️ Methodology
 
-The PaP-NF framework operates in three distinct stages:
-1. [cite_start]**Stage 1 (Local Pattern Encoding)**: Extracts localized temporal features $z$ using an efficient linear TS encoder[cite: 71, 93, 108].
-2. [cite_start]**Stage 2 (Global Context Extraction)**: Learnable prefixes $P$ align $z$ with a frozen Llama-3.1 model to extract a global context vector $c$ via average pooling[cite: 94, 102, 108].
-3. [cite_start]**Stage 3 (Probabilistic Generation)**: Conditions a Normalizing Flow (Planar Flows) on the fused representation $h = Fuse(z, c)$ to generate the predictive distribution $p(Y|X)$[cite: 88, 95, 108].
+[cite_start]The PaP-NF framework operates in three distinct stages[cite: 65, 108]:
+1. [cite_start]**Stage 1 (Local Pattern Encoding)**: Extracts localized temporal features $z$ using an efficient linear TS encoder[cite: 71, 93].
+2. [cite_start]**Stage 2 (Global Context Extraction)**: Learnable prefixes $P$ align $z$ with a frozen Llama-3.1 model to extract a global context vector $c$ via average pooling[cite: 74, 94].
+3. [cite_start]**Stage 3 (Probabilistic Generation)**: Conditions a Normalizing Flow (Planar Flows) on the fused representation $h = Fuse(z, c)$ to generate the predictive distribution $p(Y|X)$[cite: 88, 95].
 
 ---
 
 ## 📊 Experimental Results
 
 ### 1. Long-Term Point Forecasting (MSE/MAE)
-[cite_start]PaP-NF achieves competitive results across diverse benchmarks, maintaining robust performance even as the prediction horizon increases[cite: 198].
+[cite_start]PaP-NF achieves competitive results across diverse benchmarks, maintaining robust performance even as the prediction horizon increases[cite: 198, 201].
 
 <p align="center">
-  <img src="figures/table1.png" width="850">
+  <img src="figure/table1.png" width="850">
   <br>
-  <em><b>Table 1:</b> Long-term forecasting performance comparison. [cite_start]PaP-NF outperforms strong competitors like TimesNet on ETTh2 and ETTm2 at $H=720$[cite: 199, 208].</em>
+  <em><b>Table 1:</b> Long-term forecasting performance comparison. [cite_start]PaP-NF outperforms strong competitors like TimesNet on ETTh2 and ETTm2 at $H=720$[cite: 199, 209].</em>
 </p>
 
 ### 2. Probabilistic Performance (CRPS)
-[cite_start]PaP-NF provides high-quality predictive distributions, capturing multi-modal uncertainty robustly across all datasets[cite: 9, 215].
+[cite_start]PaP-NF provides high-quality predictive distributions, capturing multi-modal uncertainty robustly across all datasets[cite: 215, 217].
 
 <p align="center">
-  <img src="figures/table2.png" width="600">
+  <img src="figure/table2.png" width="600">
   <br>
   [cite_start]<em><b>Table 2:</b> CRPS comparison against native probabilistic baselines ($H=24$)[cite: 218, 219].</em>
 </p>
