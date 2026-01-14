@@ -3,16 +3,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Paper-Submitted_to_ICPR_2026-orange">
   <img src="https://img.shields.io/badge/Python-3.10+-blue.svg">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg">
   <img src="https://img.shields.io/github/stars/democracy04/PaP-NF?style=social">
 </p>
 
-<p align="center">
-  <a href="#overview">Overview</a> •
-  <a href="#methodology">Methodology</a> •
-  <a href="#experimental-results">Results</a> •
-  <a href="#getting-started">Getting Started</a>
-</p>
 
 ---
 
