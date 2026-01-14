@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Python-3.10+-blue.svg">
   <img src="https://img.shields.io/github/stars/democracy04/PaP-NF?style=social">
 </p>
-
+[📄 Paper](./paper.pdf)
 
 ---
 
