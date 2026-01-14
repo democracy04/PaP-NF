@@ -18,46 +18,61 @@
 
 ## 🌟 Overview
 
-[cite_start]**PaP-NF** is a novel probabilistic forecasting framework that aligns continuous time series with a frozen Large Language Model (LLM) using a **Prefix-as-Prompt (PaP)** mechanism[cite: 1, 7]. [cite_start]By utilizing the LLM as a global context encoder and integrating it with Normalizing Flows, the framework captures complex future uncertainties without the precision loss typically associated with numerical discretization[cite: 7, 26, 27].
+[cite_start]**PaP-NF** is a novel probabilistic forecasting framework that aligns continuous time series with a frozen Large Language Model (LLM) using a **Prefix-as-Prompt (PaP)** mechanism[cite: 1, 7]. [cite_start]By utilizing the LLM as a global context encoder and integrating it with Normalizing Flows, the framework captures complex future uncertainties without the precision loss typically associated with numerical discretization.
 
 <p align="center">
   <img src="figure/overview__.png" width="80%">
 </p>
 
 ### Key Innovations
-* [cite_start]**Principled Hybrid Framework**: Maintains local numerical fidelity through linear embeddings while leveraging frozen LLMs for sophisticated global reasoning[cite: 31].
-* [cite_start]**Prefix-as-Prompt (PaP)**: Aligns numerical embeddings with pre-trained LLMs without modifying backbone parameters[cite: 33].
-* [cite_start]**Uncertainty-Aware Forecasting**: Conditions normalizing flows on joint numerical and semantic contexts for precise density estimation[cite: 34].
-* [cite_start]**High Efficiency**: Achieves $O(1)$ sampling speed, bypassing the iterative latency of diffusion-based models[cite: 57, 257].
+* **Principled Hybrid Framework**: Maintains local numerical fidelity through linear embeddings while leveraging frozen LLMs for sophisticated global reasoning[cite: 31].
+* **Prefix-as-Prompt (PaP)**: Aligns numerical embeddings with pre-trained LLMs without modifying backbone parameters[cite: 33].
+* **Uncertainty-Aware Forecasting**: Conditions normalizing flows on joint numerical and semantic contexts for precise density estimation[cite: 34].
+* **High Efficiency**: Achieves $O(1)$ sampling speed, bypassing the iterative latency of diffusion-based models[cite: 57, 257].
 
 ---
 
 ## 🏗️ Methodology
 
-[cite_start]Our framework consists of a three-stage pipeline designed for robust long-term prediction[cite: 65, 108]:
-1. [cite_start]**Local Encoding**: A linear encoder captures localized temporal dynamics[cite: 71, 110].
-2. [cite_start]**Global Context**: Learnable prefixes align temporal features with a frozen Llama-3.1 backbone to extract semantic context[cite: 74, 131].
-3. [cite_start]**Probabilistic Generation**: Conditional Normalizing Flows generate exact likelihood-based future distributions $p(Y|X)$[cite: 88, 156].
+Our framework consists of a three-stage pipeline designed for robust long-term prediction:
+1. **Local Encoding**: A linear encoder captures localized temporal dynamics.
+2. **Global Context**: Learnable prefixes align temporal features with a frozen Llama-3.1 backbone to extract semantic context.
+3. **Probabilistic Generation**: Conditional Normalizing Flows generate exact likelihood-based future distributions $p(Y|X)$.
 
 ---
 
 ## 📊 Experimental Results
 
 ### 1. Competitive Point Forecasting
-[cite_start]PaP-NF maintains superior accuracy across long-term horizons, notably outperforming state-of-the-art deterministic models like TimesNet on high-volatility datasets[cite: 197, 199].
+PaP-NF maintains superior accuracy across long-term horizons, notably outperforming state-of-the-art deterministic models like TimesNet on high-volatility datasets.
 
 <p align="center">
   <img src="figure/table1.png" width="75%">
 </p>
 
 ### 2. Robust Uncertainty Quantification
-[cite_start]The model provides well-calibrated predictive distributions, achieving top-tier performance in Continuous Ranked Probability Score (CRPS) benchmarks[cite: 203, 215].
+The model provides well-calibrated predictive distributions, achieving top-tier performance in Continuous Ranked Probability Score (CRPS) benchmarks.
 
 <p align="center">
   <img src="figure/table2.png" width="55%">
 </p>
 
 ---
+
+# Probabilistic forecasting with Llama-3.1 backbone
+python main.py \
+  --model PaP-NF \
+  --data ETTh1 \
+  --seq_len 96 \
+  --pred_len 720 \
+  --llm_model_path YOUR_LLAMA_PATH
+
+  @article{kim2026papnf,
+  title={PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows},
+  author={Kim, Minju and Hur, Youngbum},
+  journal={Submitted to International Conference on Pattern Recognition (ICPR)},
+  year={2026}
+}
 
 ## 🚀 Getting Started
 
