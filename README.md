@@ -1,6 +1,6 @@
 # PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows
 
-[![Paper](https://img.shields.io/badge/Paper-Under_Review-orange)](#) 
+[![Paper](https://img.shields.io/badge/Paper-Submitted_to_ICPR_2026-orange)](#) 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.10+-yellow.svg)](https://www.python.org/)
 
@@ -8,57 +8,51 @@
 
 ## 🌟 Overview
 
-[cite_start]**PaP-NF** is a novel probabilistic forecasting framework that bridges the gap between Large Language Models (LLMs) and continuous time series data[cite: 7]. [cite_start]It utilizes a **Prefix-as-Prompt (PaP)** mechanism to align numerical features with a frozen LLM, effectively capturing global context without sacrificing numerical precision[cite: 27, 33].
+[cite_start]**PaP-NF** is a novel probabilistic forecasting framework that aligns continuous time series with a frozen LLM using a **Prefix-as-Prompt (PaP)** mechanism[cite: 7]. [cite_start]It addresses the fundamental challenge of numerical precision loss in LLM-based approaches by decoupling global semantic extraction from local probabilistic generation[cite: 26, 27].
 
+<p align="center">
+  <img src="figures/overview__.png" width="850" alt="PaP-NF Architecture">
+  <br>
+  <em><b>Figure 1:</b> Overview of the PaP-NF framework. [cite_start]A linear encoder extracts local patterns, while the frozen LLM provides global semantic reasoning via prefix-based alignment[cite: 65, 93].</em>
+</p>
 
-
-### Key Features
-- [cite_start]**Decoupled Design**: Separates global semantic reasoning from local numerical dynamics to prevent representational bottlenecks[cite: 27, 107].
-- [cite_start]**Frozen LLM as Encoder**: Leverages the high-level reasoning of Llama-3.1 without the need for expensive fine-tuning[cite: 33, 190].
-- [cite_start]**Normalizing Flow Decoder**: Employs conditional Planar Flows to generate flexible, multi-modal predictive distributions with exact likelihood estimation[cite: 53, 165].
-- [cite_start]**Zero Tokenization Loss**: Bypasses discrete tokenization by using linear embeddings, preserving fine-grained numerical fidelity[cite: 31, 47].
+### Key Innovations
+* [cite_start]**Principled Hybrid Framework**: Preserves local numerical precision via linear embeddings while utilizing frozen LLMs for global reasoning[cite: 31].
+* [cite_start]**Prefix-as-Prompt (PaP)**: Aligns numerical embeddings with pre-trained LLMs without modifying LLM parameters[cite: 33].
+* [cite_start]**Uncertainty-Aware Prediction**: Conditions normalizing flows on joint numerical and LLM contexts for precise density estimation[cite: 34].
+* [cite_start]**Efficient Sampling**: Achieves $O(1)$ efficiency in a single forward pass, bypassing the sampling latency of diffusion-based models[cite: 57, 257].
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Methodology
 
-[cite_start]The framework consists of three distinct stages[cite: 65, 108]:
-
-1. [cite_start]**Stage 1: Local Pattern Encoding**: A linear encoder transforms partitioned input segments into a compact numerical representation $z$[cite: 93, 117].
-2. **Stage 2: Global Context Extraction**: Learnable prefixes $P$ align $z$ with the LLM embedding space. [cite_start]A frozen Llama-3.1 model then extracts a global context vector $c$ via self-attention[cite: 94, 146, 149].
-3. [cite_start]**Stage 3: Probabilistic Generation**: A Normalizing Flow decoder, conditioned on the fused features $h = Fuse(z, c)$, generates the final predictive distribution $p(Y|X)$[cite: 95, 160].
-
+[cite_start]PaP-NF operates in three distinct stages[cite: 108]:
+1. [cite_start]**Stage 1: Local Pattern Encoding**: Extracts localized temporal variations $z$ using an efficient linear TS encoder[cite: 70, 93, 110].
+2. [cite_start]**Stage 2: Global Context Extraction**: Learnable prefixes $P$ align $z$ with the frozen LLM (Llama-3.1), producing a global context vector $c$ via average pooling[cite: 74, 94, 150].
+3. [cite_start]**Stage 3: Probabilistic Future Generation**: A Normalizing Flow decoder generates the predictive distribution $p(Y|X)$ conditioned on the fused local and global features[cite: 89, 95, 157].
 
 
 ---
 
 ## 📊 Experimental Results
 
-### 1. Long-Term Point Forecasting (MSE/MAE)
-[cite_start]PaP-NF consistently achieves competitive results across major benchmarks, particularly excelling in long-horizon tasks[cite: 198].
+### 1. Long-Term Point Forecasting
+[cite_start]PaP-NF consistently achieves competitive results across diverse benchmarks, particularly in long-horizon tasks where it reduces error accumulation[cite: 198, 201].
 
-| Dataset | Horizon ($H$) | TimesNet [23] | FEDformer [28] | **PaP-NF (Ours)** |
-| :--- | :---: | :---: | :---: | :---: |
-| **ETTh2** | 720 | 0.462 / 0.468 | 0.500 / 0.497 | [cite_start]**0.451 / 0.463** [cite: 209] |
-| **ETTm2** | 720 | 0.408 / 0.403 | 0.421 / 0.415 | [cite_start]**0.395 / 0.391** [cite: 209] |
-| **Traffic** | 720 | 0.640 / 0.350 | 0.626 / 0.382 | [cite_start]**0.618 / 0.337** [cite: 209] |
+<p align="center">
+  <img src="figures/table1.png" width="900" alt="Long-term Forecasting Results">
+  <br>
+  <em><b>Table 1:</b> Performance comparison on MSE/MAE. [cite_start]PaP-NF outperforms strong competitors like TimesNet on ETTh2 and ETTm2 for $H=720$[cite: 199, 208].</em>
+</p>
 
-### 2. Probabilistic Accuracy (CRPS)
-[cite_start]Evaluated at a 24-step horizon to assess distributional quality[cite: 192, 203].
+### 2. Probabilistic Performance (CRPS)
+[cite_start]The model provides robust uncertainty quantification, achieving state-of-the-art or second-best CRPS scores across various datasets[cite: 215, 216].
 
-| Model | ETTh1 | ETTh2 | Traffic |
-| :--- | :---: | :---: | :---: |
-| DeepAR [16] | 0.105 | 0.082 | **0.100** |
-| **PaP-NF (Ours)** | **0.103** | **0.082** | 0.181 |
-[cite_start]*(CRPS results from Table 2 [cite: 219])*
-
----
-
-## 🔍 Qualitative Analysis
-
-
-
-[cite_start]As shown in **Figure 4**, PaP-NF dynamically adjusts its uncertainty bands to cover challenging, high-volatility regions (top 10% absolute error steps of deterministic baselines), providing calibrated coverage for risk-sensitive applications[cite: 264, 265, 279].
+<p align="center">
+  <img src="figures/table2.png" width="600" alt="CRPS Comparison">
+  <br>
+  [cite_start]<em><b>Table 2:</b> CRPS comparison against native probabilistic baselines ($H=24$)[cite: 218].</em>
+</p>
 
 ---
 
