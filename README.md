@@ -1,5 +1,13 @@
 # PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Paper-Submitted_to_ICPR_2026-orange">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg">
+  <img src="https://img.shields.io/github/stars/democracy04/PaP-NF?style=social">
+</p>
+<p align="center">
+  <a href="./paper.pdf"> [Paper]</a> 
+</p>
 
 
 ## 🌟 Overview
