@@ -76,5 +76,15 @@ The model provides well-calibrated predictive distributions, achieving top-tier 
 
 ---
 
+## 📁 Project Structure
+
+```
+PaP-NF/
+ ├─ data/
+ ├─ data_loader.py
+ ├─ metric.py
+ ├─ main.py
+ └─ requirements.txt
+```
 
 
