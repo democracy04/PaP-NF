@@ -28,7 +28,7 @@ class Config:
     c_out = 7
     patch_len = 16
     stride = 8 
-    root_path = './dataset/numeric' 
+    root_path = './data' 
     data_path = 'ETTm2.csv'
     model_save_path = './best_model.pt' 
     context_dim = 128 
