@@ -69,13 +69,12 @@ You can control the dataset and core settings by editing the following fields:
 - `llm_model_name`: HuggingFace path to the frozen LLM backbone  
 - other optimization and architecture parameters (learning rate, epochs, dropout, NF-related settings, etc.)
 
-By default, the script trains on **ETTm2** and automatically evaluates multiple prediction horizons.
 
 ```python
 class Config:
     seq_len = 336
     pred_len = 96          # updated inside the script for each horizon
-    root_path = './dataset/numeric'
+    root_path = './data '
     data_path = 'ETTm2.csv'
     llm_model_name = 'meta-llama/Meta-Llama-3.1-8B'
     # + additional optimization / NF / training settings
@@ -84,7 +83,6 @@ class Config:
 If you use a different dataset, place the file under your chosen directory  
 and update `root_path` and `data_path` accordingly.
 
----
 
 ### 3. Train & Evaluate
 
