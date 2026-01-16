@@ -5,10 +5,6 @@
   <img src="https://img.shields.io/badge/Python-3.10+-blue.svg">
   <img src="https://img.shields.io/github/stars/democracy04/PaP-NF?style=social">
 </p>
-<p align="center">
-  <a href="./paper.pdf"> [Paper]</a> 
-</p>
-
 
 ## 🌟 Overview
 
