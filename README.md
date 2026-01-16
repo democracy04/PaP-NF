@@ -59,29 +59,20 @@ pip install -r requirements.txt
 
 ### 2. Dataset & Config
 
-The main training script uses a simple `Config` class defined in `main.py`.  
-You can control the dataset and core settings by editing the following fields:
-
-- `root_path`: root directory of the time series dataset  
-- `data_path`: filename of the dataset (e.g., `ETTm2.csv`)  
-- `seq_len`: input sequence length  
-- `pred_len`: prediction horizon  
-- `llm_model_name`: HuggingFace path to the frozen LLM backbone  
-- other optimization and architecture parameters (learning rate, epochs, dropout, NF-related settings, etc.)
-
+Update dataset location inside the `Config` class in `main.py`:
 
 ```python
 class Config:
     seq_len = 336
     pred_len = 96
-    prefix_len = 16        # Key mechanism of PaP
-    num_flows = 8          # Normalizing Flow depth
+    prefix_len = 16
+    num_flows = 8
     root_path = './dataset/numeric'
     data_path = 'ETTm2.csv'
     llm_model_name = 'meta-llama/Meta-Llama-3.1-8B'
 ```
 
-If you use a different dataset, place the file under your chosen directory  
+To use a different dataset, place the file in your chosen directory  
 and update `root_path` and `data_path` accordingly.
 
 
