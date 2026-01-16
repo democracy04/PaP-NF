@@ -3,7 +3,7 @@
 
 ## 🌟 Overview
 
-**PaP-NF** is a probabilistic long-horizon forecasting framework that leverages a **Prefix-as-Prompt (PaP)** alignment mechanism to connect continuous time-series representations with a frozen Large Language Model (LLM). Rather than using the LLM as a direct predictor, PaP-NF treats it as a global context encoder whose semantic structure guides a Normalizing Flow decoder. This design preserves numerical precision and enables calibrated, multi-modal prediction of future trajectories.
+**PaP-NF** is a probabilistic long-horizon forecasting framework that leverages a **Prefix-as-Prompt (PaP)** alignment mechanism to connect continuous time-series representations with a frozen Large Language Model (LLM). Rather than using the LLM as a direct predictor, PaP-NF treats it as a global context encoder whose semantic structure guides a Normalizing Flow decoder. This design preserves numerical precision and enables calibrated, multi-modal prediction of possible futures.
 
 <p align="center">
   <img src="figure/Overview_.png" width="90%">
