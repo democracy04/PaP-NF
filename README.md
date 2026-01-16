@@ -72,7 +72,7 @@ Clone the repository and install the required packages.
 ```bash
 git clone https://github.com/democracy04/PaP-NF.git
 cd PaP-NF
-pip install -r requirements.txt
+pip install -r requirements.txt'''
 
 ---
 
