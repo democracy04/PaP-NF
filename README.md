@@ -34,8 +34,8 @@ The following benchmark datasets used in the paper can be obtained from the link
 * **Traffic**: Standard transportation dataset often hosted in [Time-Series-Library](https://github.com/thuml/Time-Series-Library).
 
 You can start training and evaluation by running main.py. Ensure your datasets are in the ./data/ folder.
-'''
-python main.py \
+
+'''python main.py \
   --model PaP-NF \
   --data ETTh1 \
   --seq_len 96 \
