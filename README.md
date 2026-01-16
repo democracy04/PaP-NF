@@ -26,15 +26,6 @@
 
 ---
 
-## 🏗️ Methodology
-
-Our framework consists of a three-stage pipeline designed for robust long-term prediction:
-1. **Local Encoding**: A linear encoder captures localized temporal dynamics.
-2. **Global Context**: Learnable prefixes align temporal features with a frozen Llama-3.1 backbone to extract semantic context.
-3. **Probabilistic Generation**: Conditional Normalizing Flows generate exact likelihood-based future distributions $p(Y|X)$.
-
----
-
 ## 📊 Datasets
 
 The following benchmark datasets used in the paper can be obtained from the links below:
@@ -42,7 +33,19 @@ The following benchmark datasets used in the paper can be obtained from the link
 * **ETT (Electricity Transformer Temperature)**: Available at [ETDataset GitHub](https://github.com/zhouhaoyi/ETDataset). Includes ETTh1, ETTh2, ETTm1, and ETTm2.
 * **Traffic**: Standard transportation dataset often hosted in [Time-Series-Library](https://github.com/thuml/Time-Series-Library).
 
-Please place the downloaded `.csv` files under the `./data/` directory.
+You can start training and evaluation by running main.py. Ensure your datasets are in the ./data/ folder.
+
+python main.py \
+  --model PaP-NF \
+  --data ETTh1 \
+  --seq_len 96 \
+  --pred_len 720 \
+  --prefix_len 5 \
+  --batch_size 16 \
+  --learning_rate 0.001 \
+  --llm_model_path YOUR_LLAMA_PATH
+
+  ---
 
 ## 📊 Experimental Results
 
@@ -59,6 +62,17 @@ The model provides well-calibrated predictive distributions, achieving top-tier 
 <p align="center">
   <img src="figure/table2.png" width="75%">
 </p>
+
+---
+
+## 🚀 Getting Started
+
+### 1. Environment Setup
+Clone the repository and install the required packages.
+```bash
+git clone https://github.com/democracy04/PaP-NF.git
+cd PaP-NF
+pip install -r requirements.txt
 
 ---
   
