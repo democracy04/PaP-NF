@@ -64,7 +64,7 @@ pip install -r requirements.txt
 PaP-NF maintains superior accuracy across long-term horizons, notably outperforming state-of-the-art deterministic models like TimesNet on high-volatility datasets.
 
 <p align="center">
-  <img src="figure/table1.png" width="55%">
+  <img src="figure/table1.png" width="65%">
 </p>
 
 ### 2. Robust Uncertainty Quantification
