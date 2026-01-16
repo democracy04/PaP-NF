@@ -20,9 +20,9 @@
 
 ### Main Highlights
 
-* Hybrid Framework: Preserves local numerical structure via linear embeddings and extracts global temporal patterns using a frozen LLM.
-* Prefix-as-Prompt (PaP): Projects numerical embeddings into learned prefix vectors that condition the LLM without updating backbone parameters.
-* Uncertainty-Aware Forecasting: Uses conditional normalizing flows to produce reliable predictive distributions from both numerical and semantic contexts.
+* **Hybrid Framework**: Preserves local numerical structure via linear embeddings and extracts global temporal patterns using a frozen LLM.
+* **Prefix-as-Prompt (PaP)**: Projects numerical embeddings into learned prefix vectors that condition the LLM without updating backbone parameters.
+* **Uncertainty-Aware Forecasting**: Uses conditional normalizing flows to produce reliable predictive distributions from both numerical and semantic contexts.
 
 ---
 
