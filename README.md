@@ -95,7 +95,7 @@ The following table reports point forecasting results (MSE/MAE) across multiple 
 </p>
 
 ### 2. Probabilistic Forecasting (CRPS)
-The next table summarizes probabilistic forecasting performance using the CRPS metric.  
+The next table reports probabilistic forecasting performance using the CRPS metric.  
 
 <p align="center">
   <img src="figure/table2.png" width="65%">
