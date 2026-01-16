@@ -26,6 +26,18 @@
 
 ---
 
+## 🚀 Getting Started
+
+### 1. Environment Setup
+Clone the repository and install the required packages.
+
+```bash
+git clone https://github.com/democracy04/PaP-NF.git
+cd PaP-NF
+pip install -r requirements.txt
+```
+---
+
 ## 📊 Datasets
 
 The following benchmark datasets used in the paper can be obtained from the links below:
@@ -64,16 +76,5 @@ The model provides well-calibrated predictive distributions, achieving top-tier 
 
 ---
 
-## 🚀 Getting Started
-
-### 1. Environment Setup
-Clone the repository and install the required packages.
-
-```bash
-git clone https://github.com/democracy04/PaP-NF.git
-cd PaP-NF
-pip install -r requirements.txt
-```
----
 
 
