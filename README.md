@@ -92,26 +92,6 @@ To launch the full experiment (all horizons) with the default configuration:
 ```bash
 python main.py
 ```
-
-This will:
-
-- construct ETT-style train/test splits using `Dataset_ETT_hour`
-- train the proposed PaP-NF model for each prediction length
-- save the best checkpoint per horizon:
-  - `./best_model_len96.pt`
-  - `./best_model_len192.pt`
-  - `./best_model_len336.pt`
-  - `./best_model_len720.pt`
-- report MSE (fast validation) every epoch
-- periodically compute full metrics (MSE / MAE / CRPS / etc.)
-
-To change experiment settings (e.g., different dataset or LLM backbone),  
-simply edit the corresponding fields in the `Config` class inside `main.py` and rerun:
-
-```bash
-python main.py
-```
-
 ---
 
 ## 📊 Experimental Results
