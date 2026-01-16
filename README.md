@@ -45,7 +45,7 @@ python main.py \
   --learning_rate 0.001 \
   --llm_model_path YOUR_LLAMA_PATH
 
-  ---
+---
 
 ## 📊 Experimental Results
 
@@ -76,9 +76,10 @@ pip install -r requirements.txt
 
 ---
 
+
 ## Citation
-  
-# Citation
+
+### Citation
   @article{kim2026papnf,
   title={PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows},
   author={Kim, Minju and Hur, Youngbum},
