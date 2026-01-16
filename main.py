@@ -14,9 +14,9 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
 from transformers import AutoModel, AutoConfig
-from data_loader_nf import Dataset_ETT_hour 
+from data_loader import Dataset_ETT_hour 
 from torch.utils.data import DataLoader
-from metrics import metric, MSE
+from metric import metric, MSE
 
 # ==========================================
 # Config Template
