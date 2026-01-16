@@ -61,6 +61,7 @@ class Config:
     root_path = './data'
     data_path = 'ETTm2.csv'
     llm_model_name = 'meta-llama/Meta-Llama-3.1-8B'
+    ...
 ```
 
 To use a different dataset, place the file in your chosen directory and update `root_path` and `data_path` accordingly.
