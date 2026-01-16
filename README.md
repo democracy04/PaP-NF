@@ -67,7 +67,7 @@ class Config:
     pred_len = 96
     prefix_len = 16
     num_flows = 8
-    root_path = './dataset/numeric'
+    root_path = './data'
     data_path = 'ETTm2.csv'
     llm_model_name = 'meta-llama/Meta-Llama-3.1-8B'
 ```
