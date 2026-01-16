@@ -52,7 +52,7 @@ PaP-NF/
 PaP-NF maintains superior accuracy across long-term horizons, notably outperforming state-of-the-art deterministic models like TimesNet on high-volatility datasets.
 
 <p align="center">
-  <img src="figure/table1.png" width="65%">
+  <img src="figure/table1.png" width="60%">
 </p>
 
 ### 2. Robust Uncertainty Quantification
