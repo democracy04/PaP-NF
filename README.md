@@ -74,18 +74,6 @@ git clone https://github.com/democracy04/PaP-NF.git
 cd PaP-NF
 pip install -r requirements.txt
 ```
-
 ---
-
-## Citation
-
-```bibtex
-@article{kim2026papnf,
-  title={PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows},
-  author={Kim, Minju and Hur, Youngbum},
-  journal={Submitted to International Conference on Pattern Recognition (ICPR)},
-  year={2026}
-}
-```
 
 
