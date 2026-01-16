@@ -37,7 +37,7 @@ class Config:
     prefix_len = 16
     llm_model_name = 'meta-llama/Meta-Llama-3.1-8B'
 
-    batch_size = 2
+    batch_size = 16
     accumulation_steps = 8
     
     learning_rate = 1e-4 
