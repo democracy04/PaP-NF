@@ -26,7 +26,7 @@
 
 ---
 
-## 📊 Datasets
+## 💾 Datasets
 
 The following benchmark datasets used in the paper can be obtained from the links below:
 
