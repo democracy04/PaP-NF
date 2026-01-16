@@ -73,11 +73,12 @@ You can control the dataset and core settings by editing the following fields:
 ```python
 class Config:
     seq_len = 336
-    pred_len = 96          # updated inside the script for each horizon
-    root_path = './data '
+    pred_len = 96
+    prefix_len = 16        # Key mechanism of PaP
+    num_flows = 8          # Normalizing Flow depth
+    root_path = './dataset/numeric'
     data_path = 'ETTm2.csv'
     llm_model_name = 'meta-llama/Meta-Llama-3.1-8B'
-    # + additional optimization / NF / training settings
 ```
 
 If you use a different dataset, place the file under your chosen directory  
