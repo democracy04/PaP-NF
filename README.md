@@ -35,16 +35,15 @@ The following benchmark datasets used in the paper can be obtained from the link
 
 You can start training and evaluation by running main.py. Ensure your datasets are in the ./data/ folder.
 
-'''python main.py \
-  --model PaP-NF \
-  --data ETTh1 \
-  --seq_len 96 \
-  --pred_len 720 \
-  --prefix_len 5 \
-  --batch_size 16 \
-  --learning_rate 0.001 \
-  --llm_model_path YOUR_LLAMA_PATH
-'''
+```
+PaP-NF/
+ └─ data/
+     ├─ ETTh1.csv
+     ├─ ETTh2.csv
+     ├─ ETTm1.csv
+     ├─ ETTm2.csv
+     └─ Traffic.csv
+```
 ---
 
 ## 📊 Experimental Results
