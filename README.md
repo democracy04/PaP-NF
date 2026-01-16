@@ -18,9 +18,11 @@
   <img src="figure/Overview_.png" width="90%">
 </p>
 
+### Main Highlights
+
 * Hybrid Framework: Preserves local numerical structure via linear embeddings and extracts global temporal patterns using a frozen LLM.
 * Prefix-as-Prompt (PaP): Projects numerical embeddings into learned prefix vectors that condition the LLM without updating backbone parameters.
-* Uncertainty-Aware Forecasting: Uses conditional normalizing flows to produce calibrated predictive distributions from both numerical and semantic contexts.
+* Uncertainty-Aware Forecasting: Uses conditional normalizing flows to produce reliable predictive distributions from both numerical and semantic contexts.
 
 ---
 
@@ -94,15 +96,15 @@ python main.py
 
 ## 📊 Experimental Results
 
-### 1. Competitive Point Forecasting
-PaP-NF maintains superior accuracy across long-term horizons, notably outperforming state-of-the-art deterministic models like TimesNet on high-volatility datasets.
+### 1. Point Forecasting (MSE / MAE)
+The following table reports point forecasting results (MSE/MAE) across multiple horizons.  
 
 <p align="center">
   <img src="figure/table1.png" width="65%">
 </p>
 
-### 2. Robust Uncertainty Quantification
-The model provides well-calibrated predictive distributions, achieving top-tier performance in Continuous Ranked Probability Score (CRPS) benchmarks.
+### 2. Probabilistic Forecasting (CRPS)
+The next table summarizes probabilistic forecasting performance using the CRPS metric.  
 
 <p align="center">
   <img src="figure/table2.png" width="65%">
