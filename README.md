@@ -56,6 +56,72 @@ git clone https://github.com/democracy04/PaP-NF.git
 cd PaP-NF
 pip install -r requirements.txt
 ```
+
+### 2. Dataset & Config
+
+The main training script uses a simple `Config` class defined in `main.py`.  
+You can control the dataset and core settings by editing the following fields:
+
+- `root_path`: root directory of the time series dataset  
+- `data_path`: filename of the dataset (e.g., `ETTm2.csv`)  
+- `seq_len`: input sequence length  
+- `pred_len`: prediction horizon  
+- `llm_model_name`: HuggingFace path to the frozen LLM backbone  
+- other optimization and architecture parameters (learning rate, epochs, dropout, NF-related settings, etc.)
+
+By default, the script trains on **ETTm2** and automatically evaluates multiple prediction horizons.
+
+```python
+class Config:
+    seq_len = 336
+    pred_len = 96          # updated inside the script for each horizon
+    root_path = './dataset/numeric'
+    data_path = 'ETTm2.csv'
+    llm_model_name = 'meta-llama/Meta-Llama-3.1-8B'
+    # + additional optimization / NF / training settings
+```
+
+If you use a different dataset, place the file under your chosen directory  
+and update `root_path` and `data_path` accordingly.
+
+---
+
+### 3. Train & Evaluate
+
+The current `main.py` automatically runs experiments for multiple horizons in a single pass:
+
+```python
+if __name__ == '__main__':
+    horizons = [96, 192, 336, 720]
+    for pred_len in horizons:
+        ...
+```
+
+To launch the full experiment (all horizons) with the default configuration:
+
+```bash
+python main.py
+```
+
+This will:
+
+- construct ETT-style train/test splits using `Dataset_ETT_hour`
+- train the proposed PaP-NF model for each prediction length
+- save the best checkpoint per horizon:
+  - `./best_model_len96.pt`
+  - `./best_model_len192.pt`
+  - `./best_model_len336.pt`
+  - `./best_model_len720.pt`
+- report MSE (fast validation) every epoch
+- periodically compute full metrics (MSE / MAE / CRPS / etc.)
+
+To change experiment settings (e.g., different dataset or LLM backbone),  
+simply edit the corresponding fields in the `Config` class inside `main.py` and rerun:
+
+```bash
+python main.py
+```
+
 ---
 
 ## 📊 Experimental Results
