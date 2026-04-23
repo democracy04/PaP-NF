@@ -1,4 +1,4 @@
-# PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows
+# PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows (ICPR 2026)
 
 Official implementation of **"PaP-NF: Probabilistic Long-Term Time Series Forecasting via Prefix-as-Prompt Reprogramming and Normalizing Flows"** (ICPR 2026) by MinJu Kim, [Youngbum Hur](https://sites.google.com/inha.ac.kr/orail/professor?authuser=0).
 
